@@ -23,6 +23,24 @@ public class PlayerInput : MonoBehaviour
 			direction = new Vector3(horizontal, 0, vertical);
 		}
 
+		print(direction + "\t"+number);
 		return direction;
+	}
+
+	public bool IsAttacking()
+	{
+		bool res = false;
+
+		if (number.Equals(PlayerNumber.ONE))
+		{
+			res = Input.GetButtonDown("Fire1");
+		}
+
+		else if (number.Equals(PlayerNumber.TWO))
+		{
+			res = Input.GetButtonDown("Fire2");
+		}
+
+		return res;
 	}
 }
