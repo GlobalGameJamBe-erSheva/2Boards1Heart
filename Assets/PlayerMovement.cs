@@ -23,8 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
 	public void ApplyMovement()
 	{
-		Vector3 direction = player.GetDirectionVector();
-		Vector3 movementVector = direction * movementSpeed * Time.deltaTime;
-		rb.MovePosition(transform.position + movementVector);
+		if(player)
+			{
+				Vector3 direction = player.GetDirectionVector();
+				Vector3 movementVector = direction * movementSpeed * Time.deltaTime;
+				rb.MovePosition(transform.position + movementVector);
+			}
 	}
 }
