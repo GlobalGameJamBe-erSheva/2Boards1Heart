@@ -140,3 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ammo>k__BackingField: {fileID: 4219135673487074226, guid: 9e2e15ee4ce0f3d47a1716da09ede432, type: 3}
+  fireRate: 2
