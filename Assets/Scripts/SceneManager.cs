@@ -14,5 +14,6 @@ public class SceneManager : MonoBehaviour
 
     #endregion 
 
-    public GameObject player;
+    public GameObject player1;
+    public GameObject player2;
 }
