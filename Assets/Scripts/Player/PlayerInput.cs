@@ -23,7 +23,6 @@ public class PlayerInput : MonoBehaviour
 			direction = new Vector3(horizontal, 0, vertical);
 		}
 
-		print(direction + "\t"+number);
 		return direction;
 	}
 

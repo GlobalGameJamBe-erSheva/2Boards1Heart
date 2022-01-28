@@ -8,13 +8,28 @@ public class Rifle : MonoBehaviour, IWeapon
 
 	public void Fire()
 	{
-		Vector3 pos;
-		pos = transform.Find("Bullet Spawn").position;
-		Instantiate<GameObject>(ammo, pos, transform.rotation);
+		Vector3 pos = transform.Find("Bullet Spawn").position;
+		GameObject bullet = Instantiate(ammo, pos, transform.rotation);
+		bullet.transform.SetParent(transform.parent.parent);
+		MoveToLocalPositionOnOtherBoard(bullet);
 	}
 
-	public Vector3 LocateSpawnPositionOnOtherBoard()
+	public void MoveToLocalPositionOnOtherBoard(GameObject obj)
 	{
-		throw new System.NotImplementedException();
+		Vector3 localPosition = obj.transform.localPosition;
+
+		if (obj.transform.parent.name.Contains("2"))
+		{
+			Transform newParent = obj.transform.parent.parent.Find("Player Plane");
+			obj.transform.SetParent(newParent);
+		}
+
+		else
+		{
+			Transform newParent = obj.transform.parent.parent.Find("Player Plane 2");
+			obj.transform.SetParent(newParent);
+		}
+
+		obj.transform.localPosition = localPosition;
 	}
 }
