@@ -24,10 +24,17 @@ public class PlayerMovement : MonoBehaviour
 	public void ApplyMovement()
 	{
 		if(player)
+		{
+			Vector3 direction = player.GetDirectionVector();
+			Vector3 movementVector = direction * movementSpeed * Time.deltaTime;
+			rb.MovePosition(transform.position + movementVector);
+
+			if (direction != Vector3.zero)
 			{
-				Vector3 direction = player.GetDirectionVector();
-				Vector3 movementVector = direction * movementSpeed * Time.deltaTime;
-				rb.MovePosition(transform.position + movementVector);
+				transform.forward = direction;
 			}
+
+		}
 	}
 }
+	
