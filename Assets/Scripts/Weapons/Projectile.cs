@@ -23,7 +23,6 @@ public class Projectile : MonoBehaviour
 	{
 		if(!boundsTrigger.ClosestPoint(transform.position).Equals(transform.position))
 		{
-			print("should be destroyed");
 			Destroy(gameObject);
 		}
 	}
