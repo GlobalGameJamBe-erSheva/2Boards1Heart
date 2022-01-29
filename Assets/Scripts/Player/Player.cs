@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
 
 	public void Die()
 	{
-		print(gameObject.name + "Is Dead!");
 		Destroy(gameObject);
 	}
 }
