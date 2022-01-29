@@ -28,4 +28,10 @@ public class Player : MonoBehaviour
 	{
 		return input.IsAttacking();
 	}
+
+	public void Die()
+	{
+		print(gameObject.name + "Is Dead!");
+		Destroy(gameObject);
+	}
 }
