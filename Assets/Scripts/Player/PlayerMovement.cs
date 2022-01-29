@@ -27,11 +27,15 @@ public class PlayerMovement : MonoBehaviour
 		{
 			Vector3 direction = player.GetDirectionVector();
 			Vector3 movementVector = direction * movementSpeed * Time.deltaTime;
-			rb.MovePosition(transform.position + movementVector);
-
-			if (direction != Vector3.zero)
+			if(!Physics.Raycast(transform.position, transform.forward, 1))
 			{
-				transform.forward = direction;
+				rb.MovePosition(transform.position + movementVector);
+				//rb.AddForce(movementVector, ForceMode.Impulse);
+				if (direction != Vector3.zero)
+				{
+					transform.forward = direction;
+				}
+
 			}
 
 		}

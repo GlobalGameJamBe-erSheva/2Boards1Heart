@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
 	[field: SerializeField] public int force;
+	[SerializeField] int damage;
 	new BoxCollider boundsTrigger;
 	Rigidbody rb;
 	private void Start()
@@ -29,9 +30,14 @@ public class Projectile : MonoBehaviour
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if(collision.gameObject.CompareTag("Enemy"))
+		if (collision.gameObject.CompareTag("Enemy"))
 		{
-			collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(35);
+			collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
+		}
+
+		else if (collision.gameObject.CompareTag("Boundry"))
+		{
+			Destroy(gameObject);
 		}
 	}
 }
