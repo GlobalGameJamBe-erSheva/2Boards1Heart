@@ -13,15 +13,17 @@ public class Rifle : MonoBehaviour, IWeapon
 		StartCoroutine(Shoot());
     }
 
-	public IEnumerator Shoot()
+	IEnumerator Shoot()
 	{
 		if (!allowFire) {
-			yield return new WaitForSeconds(0);
+			yield return null;
 		}else {
+		    Debug.Log("shoottting");
 			allowFire = false;
 
 			Vector3 pos = transform.Find("Bullet Spawn").position;
 			GameObject bullet = Instantiate(ammo, pos, transform.rotation);
+			Destroy(bullet, 3);
 			bullet.transform.SetParent(transform.parent.parent);
 			MoveToLocalPositionOnOtherBoard(bullet);
 
