@@ -14,7 +14,8 @@ public class Shotgun : Rifle
 		if(allowFire)
 		{
 			allowFire = false;
-			float delta = 25;
+			int val = 25;
+			float delta = val;
 			for (int i = 0; i < 5; i++)
 			{
 				GameObject b1 = Instantiate(ammo, transform.position, transform.rotation);

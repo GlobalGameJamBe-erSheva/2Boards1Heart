@@ -16,7 +16,6 @@ public class Projectile : MonoBehaviour
 	public void SetTrigger(BoxCollider i_Collider)
 	{
 		boundsTrigger = i_Collider;
-		print(boundsTrigger.gameObject.name);
 	}
 
 	private void Update()
@@ -25,6 +24,14 @@ public class Projectile : MonoBehaviour
 		if(!boundsTrigger.ClosestPoint(transform.position).Equals(transform.position))
 		{
 			Destroy(gameObject);
+		}
+	}
+
+	private void OnCollisionEnter(Collision collision)
+	{
+		if(collision.gameObject.CompareTag("Enemy"))
+		{
+			collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(35);
 		}
 	}
 }
