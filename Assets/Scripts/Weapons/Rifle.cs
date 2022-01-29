@@ -4,7 +4,7 @@ using UnityEngine;
 public class Rifle : MonoBehaviour, IWeapon
 {
 	[field: SerializeField] public GameObject ammo { get; set; }
-	[field: SerializeField] public float fireRate;
+    [field: SerializeField] public float fireRate;
 
 	bool allowFire = true;
 
