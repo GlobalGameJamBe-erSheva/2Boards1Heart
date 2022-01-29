@@ -8,9 +8,9 @@ public class Rifle : MonoBehaviour, IWeapon
 
 	[field: SerializeField] private AudioSource audioSource;
 
-	bool allowFire = true;
+	protected bool allowFire = true;
 
-	public void Fire()
+	public virtual void Fire()
     {
 		StartCoroutine(Shoot());
     }
