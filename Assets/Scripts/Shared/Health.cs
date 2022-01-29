@@ -22,7 +22,6 @@ public abstract class Health : MonoBehaviour
 		if(currentHP <= 0)
 		{
 			currentHP = 0;
-			print(gameObject.name + " Died!");
 			Die();
 		}
 	}
