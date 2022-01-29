@@ -6,9 +6,9 @@ public class Rifle : MonoBehaviour, IWeapon
 	[field: SerializeField] public GameObject ammo { get; set; }
     [field: SerializeField] public float fireRate;
 
-	bool allowFire = true;
+	protected bool allowFire = true;
 
-	public void Fire()
+	public virtual void Fire()
     {
 		StartCoroutine(Shoot());
     }
