@@ -9,7 +9,6 @@ public class EnemyCollision : MonoBehaviour
 	{
 		if(collision.gameObject.CompareTag("Player"))
 		{
-			print("player wounded");
 			collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(25);
 		}
 	}
