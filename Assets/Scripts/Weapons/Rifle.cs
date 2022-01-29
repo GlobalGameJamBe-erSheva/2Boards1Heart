@@ -6,6 +6,8 @@ public class Rifle : MonoBehaviour, IWeapon
 	[field: SerializeField] public GameObject ammo { get; set; }
     [field: SerializeField] public float fireRate;
 
+	[field: SerializeField] private AudioSource audioSource;
+
 	bool allowFire = true;
 
 	public void Fire()
@@ -29,6 +31,8 @@ public class Rifle : MonoBehaviour, IWeapon
 			Destroy(bullet, 3);
 			bullet.transform.SetParent(transform.parent.parent);
 			MoveToLocalPositionOnOtherBoard(bullet);
+
+			audioSource.Play();
 			yield return new WaitForSeconds(fireRate);
 			allowFire = true;
 	    }
