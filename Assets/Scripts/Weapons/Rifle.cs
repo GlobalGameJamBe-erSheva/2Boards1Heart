@@ -15,18 +15,21 @@ public class Rifle : MonoBehaviour, IWeapon
 
 	IEnumerator Shoot()
 	{
-		if (!allowFire) {
+		if (!allowFire) 
+		{
 			yield return null;
-		}else {
-		    Debug.Log("shoottting");
+		}
+		
+		else 
+		{
 			allowFire = false;
 
 			Vector3 pos = transform.Find("Bullet Spawn").position;
 			GameObject bullet = Instantiate(ammo, pos, transform.rotation);
 			Destroy(bullet, 3);
 			bullet.transform.SetParent(transform.parent.parent);
+			print("first: " + bullet.transform.parent);
 			MoveToLocalPositionOnOtherBoard(bullet);
-
 			yield return new WaitForSeconds(fireRate);
 			allowFire = true;
 	    }
@@ -35,19 +38,20 @@ public class Rifle : MonoBehaviour, IWeapon
 	public void MoveToLocalPositionOnOtherBoard(GameObject obj)
 	{
 		Vector3 localPosition = obj.transform.localPosition;
-
+		ManagerInfo info = SceneManager.GetInfo();
 		if (obj.transform.parent.name.Contains("2"))
 		{
-			Transform newParent = obj.transform.parent.parent.Find("Player Plane");
+			Transform newParent = info.Plane1.transform;
 			obj.transform.SetParent(newParent);
+
 		}
 
 		else
 		{
-			Transform newParent = obj.transform.parent.parent.Find("Player Plane 2");
+			Transform newParent = info.Plane2.transform;
 			obj.transform.SetParent(newParent);
 		}
-
+		obj.GetComponent<Projectile>().SetTrigger(obj.transform.parent.GetComponent<BoxCollider>());
 		obj.transform.localPosition = localPosition;
 	}
 }
