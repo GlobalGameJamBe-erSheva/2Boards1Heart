@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 54389611762252288}
   - component: {fileID: 65281854355617798}
   - component: {fileID: -8452162334065917515}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow_Yellow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4783950073229356}
   - component: {fileID: 33745397120997448}
   - component: {fileID: 23514298845855308}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Arrow_Model
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4416625694243734}
   - component: {fileID: 136904510090007562}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HitCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
