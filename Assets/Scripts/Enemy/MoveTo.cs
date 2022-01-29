@@ -8,7 +8,10 @@ public class MoveTo : MonoBehaviour
 
     void Update()
     {
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = goal.position;
+        if(goal)
+		{
+            NavMeshAgent agent = GetComponent<NavMeshAgent>();
+            agent.destination = goal.position;
+        }
     }
 }

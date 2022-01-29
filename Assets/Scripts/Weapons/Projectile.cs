@@ -21,6 +21,7 @@ public class Projectile : MonoBehaviour
 
 	private void Update()
 	{
+		if(boundsTrigger)
 		if(!boundsTrigger.ClosestPoint(transform.position).Equals(transform.position))
 		{
 			Destroy(gameObject);
