@@ -28,7 +28,6 @@ public class Rifle : MonoBehaviour, IWeapon
 			GameObject bullet = Instantiate(ammo, pos, transform.rotation);
 			Destroy(bullet, 3);
 			bullet.transform.SetParent(transform.parent.parent);
-			print("first: " + bullet.transform.parent);
 			MoveToLocalPositionOnOtherBoard(bullet);
 			yield return new WaitForSeconds(fireRate);
 			allowFire = true;

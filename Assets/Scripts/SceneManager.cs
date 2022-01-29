@@ -34,11 +34,11 @@ public class SceneManager : MonoBehaviour
 
     #endregion 
 
-    public static GameObject player1 = GameObject.Find("Player");
+    public static GameObject player1 = GameObject.Find("Player 1");
     public static GameObject player2 = GameObject.Find("player 2");
 
-    public static GameObject Plane1 = GameObject.Find("Player Plane");
-    public static GameObject Plane2 = GameObject.Find("Player Plane 2");
+    public static GameObject Plane1 = GameObject.Find("Plane 1");
+    public static GameObject Plane2 = GameObject.Find("Plane 2");
 
     public static ManagerInfo GetInfo()
 	{

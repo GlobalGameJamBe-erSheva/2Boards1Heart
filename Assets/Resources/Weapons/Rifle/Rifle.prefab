@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 6387567142774731817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.82, y: 2.02, z: 2.16}
-  m_LocalScale: {x: 0.12413, y: 0.13115, z: 1.032191}
+  m_LocalScale: {x: 0.34861997, y: 0.36559108, z: 5.0641003}
   m_Children:
   - {fileID: 8907266500053457667}
   m_Father: {fileID: 0}
@@ -140,4 +140,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ammo>k__BackingField: {fileID: 4219135673487074226, guid: 9e2e15ee4ce0f3d47a1716da09ede432, type: 3}
-  fireRate: 2
+  fireRate: 0.3
